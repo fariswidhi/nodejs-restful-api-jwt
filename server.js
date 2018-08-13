@@ -9,7 +9,7 @@ const movies = require('./routes/movies');
 
 app.set('secretKey','nodeRestApi');
 
-mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
+// mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
 
 
 // app.use(express.bodyParser())
@@ -17,8 +17,8 @@ mongoose.connection.on('error',console.error.bind(console,'MongoDB connection er
 app.use(logger('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/users',users)
-app.use('/movies',movies)
+// app.use('/users',users)
+// app.use('/movies',movies)
 
 app.get('/', function(req, res){
  res.json({"tutorial" : "Build REST API with node.js"});
@@ -43,7 +43,4 @@ app.get('/', function(req, res){
 // 		}
 // 		)
 // }
-var port_number = server.listen(process.env.PORT || 3000);
-// app.listen(port_number);
-
-app.listen(port_number, function(){ console.log('Node server listening on port 3000');});
+app.listen(3000, function(){ console.log('Node server listening on port 3000');});
