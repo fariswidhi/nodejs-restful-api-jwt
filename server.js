@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const users = require('./routes/users');
 const jwt = require('jsonwebtoken');
-// const mongoose = require('./config/database');
+const mongoose = require('./config/database');
 const movies = require('./routes/movies');
 
 app.set('secretKey','nodeRestApi');
 
-// mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
+mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
 
 
 // app.use(express.bodyParser())
@@ -43,6 +43,4 @@ app.get('/', function(req, res){
 // 		}
 // 		)
 // }
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+app.listen(3000, function(){ console.log('Node server listening on port 3000');});
