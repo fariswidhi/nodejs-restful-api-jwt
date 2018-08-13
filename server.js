@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const users = require('./routes/users');
 const jwt = require('jsonwebtoken');
-const mongoose = require('./config/database');
+// const mongoose = require('./config/database');
 const movies = require('./routes/movies');
 
 app.set('secretKey','nodeRestApi');
 
-mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
+// mongoose.connection.on('error',console.error.bind(console,'MongoDB connection error'));
 
 
 // app.use(express.bodyParser())
